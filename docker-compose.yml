@@ -97,6 +97,16 @@ services:
       context: ./images/cpp_httplib
     x-props:
       role: origin
+  dusty:
+    build:
+      args:
+        APP_BRANCH: main
+        APP_REPO: https://github.com/lalinsky/dusty
+        APP_VERSION: 01a497a31bae3ca410e672548ef1e4f0cdabcac1
+        ZIG_VERSION: 0.16.0
+      context: ./images/dusty
+    x-props:
+      role: origin
   eclipse_grizzly:
     build:
       args:
@@ -365,6 +375,12 @@ services:
     - ./tools:/tools
     x-props:
       role: transducer
+  node_prebuilt:
+    build:
+      context: ./images/node_prebuilt
+    x-props:
+      requires-tls: true
+      role: origin
   node_stdlib:
     build:
       args:

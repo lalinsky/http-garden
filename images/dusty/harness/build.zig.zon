@@ -1,0 +1,10 @@
+.{
+    .name = .dusty_garden,
+    .version = "0.0.0",
+    .fingerprint = 0x848c6947c3a7e51d,
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        .dusty = .{ .path = "dusty-src" },
+    },
+    .paths = .{ "build.zig", "build.zig.zon", "src" },
+}
